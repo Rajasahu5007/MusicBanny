@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  background-color: black;
+  color: white;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.left {
+  width: 30vw;
+  padding: 10px;
+  bottom: 5px;
+}
+.right {
+  width: 75vw;
+  bottom: 5px;
+}
+
+.home ul li {
+  display: flex;
+  gap: 15px;
+  width: 14px;
+  list-style: none;
+  padding-top: 34px;
+  font-weight: bold;
+}
+
+.heading {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  padding-top: 14px;
+  padding: 15px 14px;
+  font-weight: bold;
+  align-items: center;
+  font-size: 13px;
+}
+
+.heading img {
+  width: 30px;
+}
+/* library */
+.library {
+  min-height: 80vh;
+  position: relative; /* Ensure relative positioning */
+}
+
+.footer {
+  display: flex;
+  font-size: 10px;
+  color: gray;
+  gap: 15px;
+  position: absolute; /* Keep absolute positioning */
+  bottom: 0;
+  padding: 10px 0;
+  width: 100%; /* Ensure footer spans the full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.footer a {
+  color: gray;
+}
+
+
+.right {
+  margin: 16px 0;
+  position: relative;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(53, 52, 52);
+}
+
+.header > * {
+  padding: 20px;
+}
+
+.spotyfyPlaylist {
+  padding: 16px;
+}
+.cardContainer {
+  margin: 30px;
+  display: flex;
+  
+  gap: 10px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.card {
+  width: 150px;
+  padding-top: 3px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #282828;
+  position: relative;
+  overflow: hidden; /* Ensure the play button stays within the card */
+  transition: all 0.3s ease; /* Smooth transition for card hover */
+}
+
+/* Hover effect on the card */
+.card:hover {
+  background-color: #333; /* Darken the card background on hover */
+  transform: scale(1.05); /* Scale the card slightly */
+}
+
+.card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.Play {
+  opacity: 0;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  background-color: #1fdf64;
+  display: flex
+;
+  justify-content: center;
+  position: absolute;
+  top: 52%;
+  left: 78%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on the card to show the play button */
+.card:hover .Play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1); /* Slight scale effect when hovering */
+}
+
+.buttons > * {
+  margin: 0 8px;
+}
+.signupbtn {
+  background-color: #333333; /* Spotify's green */
+  color: white; /* White text */
+  font-weight: bold;
+  border: none;
+  outline: none;
+  padding: 10px 15px; /* Spacing for a bolder, more prominent button */
+  border-radius: 40px; /* Rounded corners for a pill shape */
+  font-size: 12px; /* Font size for better readability */
+  cursor: pointer; /* Makes the button clickable */
+  text-transform: uppercase; /* Uppercase text like Spotify's button */
+  letter-spacing: 1px; /* Slight letter spacing for style */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth color change and movement */
+}
+
+.signupbtn:hover {
+  background-color: #444444; /* Slightly lighter green on hover */
+  transform: translateY(-4px); /* Lifts the button slightly when hovered */
+}
+
+.signupbtn:active {
+  background-color: #333333; /* Keeps the original green color when clicked */
+  transform: translateY(2px); /* Button moves down slightly when clicked */
+}
+
+.loginbtn {
+  background-color: #fefcfc; /* Dark grey color for the login button */
+  color: rgb(18, 17, 17); /* White text */
+  font-weight: bold;
+  border: none;
+  outline: none;
+  padding: 10px 15px; /* Spacing for a bolder, prominent button */
+  border-radius: 40px; /* Rounded corners for a pill shape */
+  font-size: 12px; /* Font size for better readability */
+  cursor: pointer; /* Makes the button clickable */
+  text-transform: uppercase; /* Uppercase text like Spotify's button */
+  letter-spacing: 1px; /* Slight letter spacing for style */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth color change and movement */
+}
+
+.loginbtn:hover {
+  background-color: #726e6e; /* Lighter grey on hover */
+  transform: translateY(-4px); /* Lifts the button slightly when hovered */
+}
+
+.loginbtn:active {
+  background-color: #333333; /* Keeps the original dark grey color when clicked */
+  transform: translateY(2px); /* Button moves down slightly when clicked */
+}
+
+.playbar {
+  position: fixed;
+  bottom: 5px;
+  right: 6px;
+  background-color: #434343;
+  border-radius: 25px;
+  width: 67vw;
+  padding: 10px;
+  height: 30px;
+}
+
+.songbuttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  
+}
+
+.songbuttons img {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.songList {
+  height: 500px;
+  overflow: auto;
+  padding: 10px;
+  margin-bottom: 50px; /* Add margin to prevent overlap */
+}
+
+/* hamburger */
+
+.hamburger{
+  display: none;
+}
+.hamburgerContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+/* .close */
+.close{
+  display: none;
+}
+
+.songList ul {
+  padding: 0; /* Remove default padding */
+  font-size: 12px;
+}
+
+.songList ul li {
+  list-style-type: none; /* Remove default list style */
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 8px; /* Add margin between list items */
+  padding: 8px; /* Add padding inside list items */
+  background-color: #282828; /* Darker background for list items */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.songList ul li:hover {
+  background-color: #333; /* Slightly lighter background on hover */
+}
+
+.songList .info {
+  font-size: 12px;
+  width: 600px;
+  flex-grow: 1; /* Allow info to take available space */
+}
+
+.songList .info div:first-child {
+  font-weight: bold; /* Make song name bold */
+}
+
+.playnow {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+.playnow img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  cursor: pointer; /* Add pointer cursor */
+}
+
+.songList li img.invert {
+    cursor:pointer;
+}
+
+.songList li img.invert:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+
+.seekbar {
+  height: 1px;
+  width: 95%;
+  bottom: 5px;
+  border: 2px solid rgb(251, 247, 247);
+  position: absolute;
+  bottom: 11px;
+  right: 20px;
+  margin: -6px;
+  cursor: pointer;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  left: -6px;
+  bottom: 8px;
+}
+.songinfo{
+  
+  padding: 0 12px;
+  width: 250px;
+}
+.songtime{
+ 
+  padding: 0 12px;
+}
+.volume{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+}
+.abovebar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg-black {
+  background-color: black;
+  color: white;
+}
+.invert {
+  filter: invert(1);
+}
+.bg-grey {
+  background-color: #121212;
+}
+.m-1 {
+  margin: 5px;
+}
+.p-1 {
+  padding: 5px;
+}
+
+@media (max-width: 1200px) {
+  .left{
+  
+    position: absolute;
+    top: 0%;
+    left: -120%;
+    transition: all .3s;
+    z-index: 1;
+    width: 370px;
+    background-color: #121212;
+  }
+ .left.close{
+ left: 0px;
+  }
+  .songinfo,.songtype{
+    width: auto;
+  }
+  .close {
+    position: absolute;
+    left: 350px;
+  }
+  
+  .right{
+    width: 100%;
+  }
+
+  .playbar{
+    width: calc(100vw - 20px);
+    bottom: 14px;
+  }
+  .seekbar{
+    width: calc(100vw-60px);
+    bottom: 11px;
+    right: 20px;
+  }
+  .hamburger{
+    display: block;
+  }
+  .close{
+    display: block;
+  }
+  .card{
+    width: 100vw;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+/* ... your existing CSS ... */
+
+.songList li img.invert:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+/* ... your existing CSS ... */
+
+.Play.clicked {
+  background-color: #1bd760; /* Slightly darker green when clicked */
+}
+
+.Play:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+/* search baar */
+/* Basic styling for search container */
+.search-container {
+  width: 250px; /* Default width */
+  margin: 20px;
+  max-width: 100%; /* Make it responsive and take up 100% of available space if necessary */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Style for search input */
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333; /* Darker border */
+  border-radius: 20px; /* More rounded corners */
+  background-color: #282828; /* Dark background */
+  color: #fff; /* White text */
+  outline: none; /* Remove default outline */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Placeholder style */
+#searchInput::placeholder {
+  color: #aaa; /* Lighter placeholder text */
+}
+
+/* Style for search results */
+#searchResults {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #282828; /* Dark background */
+  color: #fff; /* White text */
+  max-height: 200px; /* Limit height for scrollable results */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #333;
+}
+
+/* Style for each search result */
+#searchResults li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #333; /* Separator between list items */
+}
+
+/* Remove border from the last result */
+#searchResults li:last-child {
+  border-bottom: none;
+}
+
+/* Hover effect on search result */
+#searchResults li:hover {
+  background-color: #333; /* Slightly lighter background on hover */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and small screens (up to 768px) */
+@media (max-width: 768px) {
+  .search-container {
+    width: 100%; /* Make search container fill the width of the screen */
+    margin: 10px; /* Adjust margin to be smaller */
+  }
+
+  #searchInput {
+    font-size: 14px; /* Slightly reduce font size */
+  }
+
+  #searchResults {
+    max-height: 150px; /* Reduce max height of search results */
+  }
+}
+
+/* For mobile screens (up to 480px) */
+@media (max-width: 480px) {
+  .search-container {
+    width: 100%; /* Make search container take full width */
+    margin: 10px; /* Adjust margin */
+  }
+
+  #searchInput {
+    padding: 8px; /* Reduce padding for mobile */
+    font-size: 14px; /* Reduce font size */
+  }
+
+  #searchResults {
+    max-height: 120px; /* Reduce max height for smaller devices */
+  }
+}
