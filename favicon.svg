@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bunnyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4ec4"></stop>
+      <stop offset="100%" stop-color="#a64eff"></stop>
+    </linearGradient>
+    <linearGradient id="earGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff99dc"></stop>
+      <stop offset="100%" stop-color="#ff4ec4"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Bunny ears -->
+  <path d="M20 10 Q15 0, 10 10" fill="url(#earGradient)"></path> 
+  <path d="M30 10 Q35 0, 40 10" fill="url(#earGradient)"></path> 
+
+  <!-- Bunny head -->
+  <circle cx="25" cy="30" r="15" fill="url(#bunnyGradient)"></circle> 
+
+  <!-- Eyes -->
+  <circle cx="20" cy="28" r="2" fill="#fff"></circle>
+  <circle cx="30" cy="28" r="2" fill="#fff"></circle>
+
+  <!-- Mouth -->
+  <path d="M20 35 Q25 40, 30 35" stroke="#fff" fill="none"></path>
+
+  <!-- Musical note -->
+  <path d="M40 30 Q45 25, 45 30 Q45 35, 40 30" fill="url(#bunnyGradient)"></path>
+  <path d="M45 30 L45 50" stroke="url(#bunnyGradient)" stroke-width="2"></path>
+  <circle cx="45" cy="50" r="3" fill="url(#bunnyGradient)"></circle>
+</svg>
